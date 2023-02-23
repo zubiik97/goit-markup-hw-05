@@ -42,10 +42,6 @@ ul {
     margin-right: 40px;
 
 }
-.site-nav .item{
-    padding-top: 24px;
-
-}
 
 .site-address .item:not(:last-child){
     margin-right: 40px;
@@ -53,18 +49,23 @@ ul {
 }
 
 .padding-a{
+    display: block;
     padding-top: 24px;
             padding-bottom: 24px;
+            position: relative;
 
 }
 .padding-a.current::after{
+    position: absolute;
+    left: 0;
+    bottom: 0;
     content: '';
     display: flex;
 height: 4px;
 width: 100%;
 background-color: var(--hover-focus);
 border-radius: 2px;
-margin-top: 20px;
+
 
 }
 
@@ -127,7 +128,8 @@ ul{
         letter-spacing: 0.02em;
      }
 .site-nav .current{
-color: var(--brand-color);
+color: var(--hover-focus);
+
 }
 
  
@@ -138,19 +140,19 @@ transition-duration: 250ms;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .header-nav .site-address:focus, .header-nav .site-address a:hover{
+    .header-nav .site-address a:focus, .header-nav .site-address a:hover{
         color: var(--hover-focus);
 
     }
 
-.site-nav{
-      transition-property: color ;
+.site-nav a{
+      transition-property: color;
 transition-duration: 250ms; 
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   
 }
         
-        .header-nav .site-nav:focus, .header-nav .site-nav a:hover{
+        .header-nav .site-nav a:focus, .header-nav .site-nav a:hover{
             color: var(--hover-focus); }
   
     .site-address .item{
@@ -403,10 +405,7 @@ display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
-   transition-property: background-color border-radius;
-transition-duration: 250ms; 
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icons a:hover, .social-icons a:focus{
@@ -495,14 +494,12 @@ justify-content: center;
     border: 1px solid #8E8F99;
     border-radius: 4px;
     fill: #8E8F99;
-       transition-property: fill;
-transition-duration: 250ms; 
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-logo a:hover, .customer-logo a:focus{
     fill:var(--hover-focus);
+    border-color: var(--hover-background-button);
 
 }
 
@@ -556,7 +553,7 @@ padding-bottom: 120px;
         border: 1px solid #E7E9FC;
         border-radius: 4px;
         align-items: center;
-        transition-property: background-color color border-color;
+        transition-property: background-color, color, border-color;
         transition-duration: 250ms; 
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
        
@@ -730,17 +727,14 @@ margin-bottom: 16px;
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
-transition-property: scale;
-transition-duration: 3000ms;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden{
     scale: 1.5;
     opacity: 0;
     pointer-events: none;
-    overflow: hidden;
+    visibility: hidden;
 }
 
 
@@ -766,11 +760,18 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   margin-right: 24px;
   margin-top: 24px;
   margin-left: 360px;
-    background: #E7E9FC;
+    background-color: #E7E9FC;
+    fill: #000000;
 border: 1px solid rgba(0, 0, 0, 0.1);
 border-radius: 50%;
 cursor: pointer;
 }
+
+.button-close:active{
+    fill: var(--main-white-color);
+    background-color: var(--hover-background-button);
+}
+
 
 
     .footer a{
@@ -805,10 +806,7 @@ width: 100%;
 height: 100%;
 background-color: rgba(255, 255, 255, 0.1);;
 border-radius: 50%;
-transition-property: background-color border-radius;
-transition-duration: 250ms; 
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
